@@ -1,8 +1,22 @@
 import React from "react";
-// Icons
 import { RiWindowFill, RiPaintBrushLine } from "react-icons/ri";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Services = () => {
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    toast.success("Gracias por suscribirte!", {
+      position: "top-right",
+      autoClose: 3000, // Cerrar automáticamente después de 3 segundos
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  };
+
   return (
     <div
       id="services"
@@ -14,7 +28,7 @@ const Services = () => {
           Discover how we can help you enhance your living space with our
           customized curtain designs.
         </p>
-        <form className="w-full">
+        <form className="w-full" onSubmit={handleSubscribe}>
           <div className="relative">
             <input
               type="text"
@@ -65,6 +79,7 @@ const Services = () => {
           </p>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

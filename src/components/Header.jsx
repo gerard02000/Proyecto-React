@@ -11,7 +11,7 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-gray-800 z-50 shadow-md">
+    <header className="fixed top-0 left-0 w-full bg-footer z-50 shadow-md">
       <div className="container mx-auto py-4 flex items-center justify-between">
         <div className="flex items-center">
           <a href="#" className="flex items-center">
@@ -23,11 +23,11 @@ const Header = () => {
             >
               <img src="/cc.png" alt="Logo" className="w-12 h-12" />
             </div>
-            <span className="text-xl font-semibold text-white">Curtain Crafters</span>
+            <span className="text-lg sm:text-xl font-semibold text-white">Curtain Crafters</span>
           </a>
         </div>
         <nav className="hidden xl:flex flex-grow justify-center">
-          <div className="flex items-center space-x-8">
+          <div className="flex items-center space-x-4 sm:space-x-8">
             <a href="#home" className="nav-link" onClick={closeMenuAndScroll}>
               Home
             </a>
@@ -92,6 +92,24 @@ const Header = () => {
           border-radius: 0.5rem;
           transform: scale(1.05);
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 640px) {
+          .text-lg {
+            font-size: 0.875rem; /* 14px */
+          }
+          .space-x-4 {
+            margin-right: 0.5rem;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .sm:text-xl {
+            font-size: 1.25rem; /* 20px */
+          }
+          .space-x-4 {
+            margin-right: 0.5rem;
+          }
         }
       `}</style>
     </header>
